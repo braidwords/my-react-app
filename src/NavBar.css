@@ -1,0 +1,7 @@
+.rowC{display:flex; flex-direction:row;}
+
+.divider{
+    width:10px;
+    height:auto;
+    display:inline-block;
+}
