@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ApartmentByCity from './ApartmentByCity';
 
 class SearchBar extends Component {
 
@@ -22,25 +23,38 @@ class SearchBar extends Component {
       
   };
 
-  render () {
-    return (
-        <div>
+  render () 
+{
+  let apartment = this.state.apartment[0];
+  let aptProps = {apartment}
+  return (
+    <React.Fragment>
+     <div>
+         {this.state.apartment.map((apartment, key) => {
+               return (
+                   <ApartmentByCity key={`apt-${key}`} apartment={...apartment} />
+               );
+           })
+         }
+         <ApartmentByCity apartment={apartment} />
+         <ApartmentByCity {...aptProps} />
+     </div>
+  <div>
         <form onSubmit={e => e.preventDefault()}>
           <input
             type='text'
             size='45'
-            placeholder=' '
+            placeholder='Barcelona'
             onChange={this.handleSearch.bind(this)}
             value={this.state.city} />
           <button
             type='search'
-            onClick={this.handleGoClick.bind(this)
-} >
+            onClick={this.handleGoClick.bind(this)}>
             <b> Search </b>
           </button>
         </form>
       </div>
-    
+      </React.Fragment>
     )
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SearchBar from "./Searchbar";
 import './NavBar.css';
 
+
  
 class NavBar extends Component {
   render() {

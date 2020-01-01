@@ -4,25 +4,6 @@ import NavBar from './NavBar';
 
 class App extends Component{
 
-  state = {
-    isLoading:true,
-    apartments: [],
-    error: null
-  }
-
-  fetchApartments(){
-    fetch(`/apartment`)
-    .then(res => res.json())
-    .then((data) => {
-      this.setState({ apartments: data })
-    })
-    //.catch(console.log)
-  }
-  componentDidMount() {
-    this.fetchApartments();
-  }
-
-
   render()
   {
 
